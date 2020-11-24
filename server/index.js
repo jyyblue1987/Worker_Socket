@@ -17,22 +17,22 @@ var fs = require('fs');
  //var privateKey = fs.readFileSync('localcert/server.key', 'utf8');
  //var certificate = fs.readFileSync('localcert/server.crt', 'utf8');
 
-var privateKey = fs.readFileSync('../sslcert/server.key', 'utf8');
-var certificate = fs.readFileSync('../sslcert/server.crt', 'utf8');
+// var privateKey = fs.readFileSync('../sslcert/server.key', 'utf8');
+// var certificate = fs.readFileSync('../sslcert/server.crt', 'utf8');
 
 
-var credentials = { key: privateKey, cert: certificate };
-var https = require('https');
+// var credentials = { key: privateKey, cert: certificate };
+// var https = require('https');
 
 //pass in your credentials to create an https server
-var httpsServer = https.createServer(credentials);
-httpsServer.listen(5013);
+// var httpsServer = https.createServer(credentials);
+// httpsServer.listen(5013);
 
 var http = require('http');
 
 //pass in your credentials to create an https server
 var httpServer = http.createServer();
-// httpServer.listen(5001);
+httpServer.listen(5001);
 
 var server = require('ws').Server;
 
@@ -43,8 +43,8 @@ function verifyClient(info, next) {
 }
 
 var ws = new server({
-    server: httpsServer,    
-    // server: httpServer,    
+    // server: httpsServer,    
+    server: httpServer,    
     maxPayload: 5000 * 1024,    // Restrict payload size
     //verifyClient: verifyClient
 });

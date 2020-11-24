@@ -26,7 +26,8 @@
 
 
 	//var ws = new WebSocket(`wss://dashboard4.com:${wss_port}/`)
-	var ws = new WebSocket(`wss://127.0.0.1:${wss_port}/`)
+	// var ws = new WebSocket(`wss://127.0.0.1:${wss_port}/`)
+	var ws = new WebSocket(`ws://127.0.0.1:5001/`)
 	
 	
 	
