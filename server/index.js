@@ -313,6 +313,29 @@ ws.on('connection', function(client){
                 var response = {action: "pong"};                    
                 client.send(JSON.stringify(response));
                 break;
+
+            case "set_worker":
+                if( client.token != message.token )
+                    return;
+
+                adminid = message.adminid;
+                userid = message.userid;
+                result = await database.getUserData(adminid);
+                if( result.length > 0 )
+                {
+                    await database.updateWorker(userid, adminid, result[0].email);
+                    notifyAdminNewUser(ws, false);                
+                }
+                break;
+            case "disable_worker":
+                if( client.token != message.token )
+                    return;
+
+                adminid = message.adminid;
+                userid = message.userid;                
+                await database.updateWorker(userid, "", "");
+                notifyAdminNewUser(ws, false);                
+                break;
         }
 
         setTimeout(function() {
@@ -386,10 +409,16 @@ async function notifyAdminNewUser(ws, notify){
         if( user.data != null )
             site = user.data.site;
         var item = {name: user.name, id: user.id, site: site, isActive: user.isActive, ip: user.ip, country: user.country, country_code: user.country_code, city: user.city, region: user.region};
-        if( user.work )
+        if( user.worker_id )
+        {
+            item.worker_id = user.worker_id;
             item.work = user.work;
+        }
         else
+        {
+            item.worker_id = "";
             item.work = 'None';
+        }
         
         data.push(item);
     });

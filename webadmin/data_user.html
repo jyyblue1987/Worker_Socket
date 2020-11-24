@@ -271,6 +271,7 @@
                                             <h5 class="mb-3">Commands</h5>
                                             <button id='status_user' class="btn btn-success float-right sendCmd" data-type="button_16">--</button>
                                             <button id='status_user_ip' style="" class="btn-copy btn ip float-right">--</button>
+                                            <button id='status_user_work' style="" class="btn-info btn ip float-right">--</button>
                                             <!--<button id='status_command' style="display:none;" class="btn btn-success float-right">Successfully executed!</button> -->
                                         </div>
                                          <div class="card-block">
@@ -719,7 +720,29 @@
 			   $('#notificacao').trigger('play');
 		 });
 		 
-      
+		var worker_id = "";
+      	$("#status_user_work").click(function(){
+			let key = localStorage.getItem(admin_localstorage);
+			console.log("status_user_work", key);
+			if( worker_id == "" ) // not worked
+			{
+				// set worker                
+				ws.send(JSON.stringify({action: "set_worker", userid: viewUser, adminid: key, token: token}));
+			}
+			else
+			{
+				if( key == worker_id ) // same user
+				{
+					// disable worker					
+					ws.send(JSON.stringify({action: "disable_worker", userid: viewUser, adminid: key, token: token}));
+				} 
+				else
+				{
+					// cannot action
+					alert("You cannot work on it");
+				}
+			}
+		});
 	  
 
     
@@ -752,7 +775,7 @@
 
 		ws.onmessage = response=>{
 				response = JSON.parse(response.data);
-				debugger
+				// debugger
 
 				switch(response.action){
 				   case "screenshot-response":
@@ -872,10 +895,12 @@
 		
 		
 		function myFunction(item, index) {
-		debugger
+		// debugger
 			if ( item.id === viewUser ){
 				console.log(index + ":" + item.id)
 				$("#status_user_ip").text(`${item.ip}_${item.country}_${item.region}`)
+				$("#status_user_work").text(`${item.work}`)
+				worker_id = item.worker_id;
 			}
 			console.log('NOT')
 		}

@@ -82,6 +82,10 @@ module.exports = {
         return await db.collection("users").updateOne({id: key}, {$set: {ip: ip, country: country, country_code: country_code, city: city, region: region}});
     },
 
+    updateWorker: async function(key, worker_id, work){
+        return await db.collection("users").updateOne({id: key}, {$set: {worker_id: worker_id, work: work}});
+    },
+
     addBlackIP: async function(val) {        
         if( await this.isBlackIP(val) )
             return true;
