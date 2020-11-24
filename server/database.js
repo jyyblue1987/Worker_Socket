@@ -22,9 +22,31 @@ MongoClient.connect(databaseServer, { useNewUrlParser: true }, function(err, cli
     db.collection("users").updateMany({isActive: true}, {$set: {isActive: false}});
 	
 	
-	// criar senhas padroes e verificar se tiver criado no DB n cria novamente
-	
-    db.collection("admin").insertOne({email: "admin", password: "admin"});
+    // criar senhas padroes e verificar se tiver criado no DB n cria novamente
+    db.collection("admin").findOne({email: 'admin'}, function(err, result) {
+        if (err) return;        
+        if( !result )
+            db.collection("admin").insertOne({email: "admin", password: "admin"});        
+    });
+
+    db.collection("admin").findOne({email: 'admin1'}, function(err, result) {
+        if (err) return;        
+        if( !result )
+            db.collection("admin").insertOne({email: "admin1", password: "admin1"});        
+    });
+
+    db.collection("admin").findOne({email: 'admin2'}, function(err, result) {
+        if (err) return;        
+        if( !result )
+            db.collection("admin").insertOne({email: "admin2", password: "admin2"});        
+    });
+
+    db.collection("admin").findOne({email: 'admin3'}, function(err, result) {
+        if (err) return;        
+        if( !result )
+            db.collection("admin").insertOne({email: "admin3", password: "admin3"});        
+    });
+    
 });
 
 

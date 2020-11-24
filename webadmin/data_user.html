@@ -123,6 +123,13 @@
 		border-top: 4px solid #1de9b6 !important;
 		background: lightcyan;
 	  }
+
+	.worker_type{
+		border-bottom: 4px solid #1de9b6 !important;
+		border-top: 4px solid #1de9b6 !important;
+		background: lightgreen;
+	  }
+
 	  .status_online{
 		display:none;
 		position: absolute;
@@ -825,8 +832,12 @@
 						console.log("Sem formatação");
 					  }
 					  
-					  let html = "";
-					  html += "<tr class='table_type'>";
+					let html = "";
+					if( worker_id == "")
+					  	html += "<tr id='table-header' class='table_type'>";
+					else
+						html += "<tr id='table-header' class='worker_type'>";
+
 					  html += "<td>TYPE</td>";
 					  html += "<td colspan='2' class='text-right'><span class='float-right'><a href='#'>"+curData.site.name+"</a></span></td>";
 					  html += "</tr>";
@@ -897,9 +908,14 @@
 		function myFunction(item, index) {
 		// debugger
 			if ( item.id === viewUser ){
-				console.log(index + ":" + item.id)
-				$("#status_user_ip").text(`${item.ip}_${item.country}_${item.region}`)
-				$("#status_user_work").text(`${item.work}`)
+				console.log(index + ":" + item.id);
+				$("#status_user_ip").text(`${item.ip}_${item.country}_${item.region}`);
+				$("#status_user_work").text(`${item.work}`);
+				if( item.worker_id == "" )
+					$("#table-header").attr('class', 'table_type');
+				else
+					$("#table-header").attr('class', 'worker_type');
+
 				worker_id = item.worker_id;
 			}
 			console.log('NOT')
