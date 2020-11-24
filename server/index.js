@@ -385,7 +385,13 @@ async function notifyAdminNewUser(ws, notify){
         var site = '';
         if( user.data != null )
             site = user.data.site;
-        data.push({name: user.name, id: user.id, site: site, isActive: user.isActive, ip: user.ip, country: user.country, country_code: user.country_code, city: user.city, region: user.region});
+        var item = {name: user.name, id: user.id, site: site, isActive: user.isActive, ip: user.ip, country: user.country, country_code: user.country_code, city: user.city, region: user.region};
+        if( user.work )
+            item.work = user.work;
+        else
+            item.work = 'None';
+        
+        data.push(item);
     });
 
     ws.clients.forEach(function e(client){
