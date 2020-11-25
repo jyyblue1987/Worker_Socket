@@ -711,8 +711,10 @@
 
                if(current.isActive){
                   let html = "";
-
-                  html += "<tr class='tr-link-alert'>";
+                  if( current.worker_id == "" )
+                     html += "<tr class='tr-link-alert'>";
+                  else
+                     html += "<tr class='tr-link-working'>";
                   html += "<td class='t-a-center'><i class='fas fa-circle text-c-green f-10'></i></td>";
                   html += "<td><h6 class='mb-1'><a target='_blank' href='./data_user.html#" +current.id+ "'>"+current.ip + "_" + current.country + "_" + current.region +"</a></h6></td>";
                   html += "<td><h6 class='mb-1'><a target='_blank'  href='" + current.site.site + "'>"+current.site.name+"</a></h6></td>";
@@ -728,7 +730,11 @@
                }else{
                   let html = "";
 
-                  html += "<tr class='tr-link'>";
+                  if( current.worker_id == "" )
+                     html += "<tr class='tr-link'>";
+                  else
+                     html += "<tr class='tr-link-working'>";
+
                   html += "<td class='t-a-center'><i class='fas fa-circle f-10'></i></td>";
                    html += "<td><h6 class='mb-1'><a target='_blank' href='./data_user.html#" +current.id+ "'>"+current.ip + "_" + current.country + "_" + current.region +"</a></h6></td>";
                   html += "<td><h6 class='mb-1'><a href='#'>"+current.site.name+"</a></h6></td>";

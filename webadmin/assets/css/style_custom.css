@@ -118,12 +118,17 @@ td i:hover{
 	background:#daffe2 !important;
 }
 
+
 .tr-link-highlight{
 	background:#d6e8ff !important;
 }
 
 .tr-link{
 	background:#f3f3f3 !important;
+}
+
+.tr-link-working{
+	background:#ffc1fd !important;
 }
 
 .tr-link-blacklist{
